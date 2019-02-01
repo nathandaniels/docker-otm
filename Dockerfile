@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:18.04
 RUN apt-get -y update
 RUN apt-get -y install python-setuptools python-software-properties git
 RUN apt-get -y install nodejs redis-server
