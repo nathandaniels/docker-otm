@@ -1,4 +1,8 @@
 FROM ubuntu:18.04
+RUN add-apt-repository main
+RUN add-apt-repository universe
+RUN add-apt-repository restricted
+RUN add-apt-repository multiverse
 RUN apt-get -y update
 RUN export DEBIAN_FRONTEND=noninteractive; \
     export DEBCONF_NONINTERACTIVE_SEEN=true; \
