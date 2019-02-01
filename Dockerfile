@@ -14,7 +14,8 @@ RUN export DEBIAN_FRONTEND=noninteractive; \
         tzdata \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
-RUN apt-get -y install python-setuptools software-properties-common git
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y python-setuptools
+RUN apt-get -y install git
 RUN apt-get -y install nodejs redis-server
 RUN apt-get -y install gettext libproj-dev libgdal-dev build-essential python-pip python-dev
 RUN apt-get -y install sendmail
