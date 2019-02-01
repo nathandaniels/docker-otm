@@ -6,7 +6,7 @@ RUN apt-get -y install gettext libproj-dev libgdal-dev build-essential python-pi
 RUN apt-get -y install sendmail
 RUN apt-get -y install libfreetype6-dev
 # RUN apt-get -y install xvfb firefox
-RUN apt-get -y install postgresql postgresql-server-dev-9.3 postgresql-contrib postgresql-9.3-postgis-2.1
+RUN apt-get -y install postgresql postgresql-server-dev-10 postgresql-contrib postgresql-10-postgis-2.4
 COPY setup_postgres.sh .
 RUN ./setup_postgres.sh
 COPY setup_otm-core.sh .
