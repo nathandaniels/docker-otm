@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 RUN apt-get -y update
-RUN apt-get -y install python-setuptools python-software-properties git
+RUN apt-get -y install python-setuptools software-properties-common git
 RUN apt-get -y install nodejs redis-server
 RUN apt-get -y install gettext libproj-dev libgdal1-dev build-essential python-pip python-dev
 RUN apt-get -y install sendmail
