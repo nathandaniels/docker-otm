@@ -1,9 +1,10 @@
 FROM ubuntu:18.04
+RUN apt-get -y update
+RUN apt-get install -y software-properties-common
 RUN add-apt-repository main
 RUN add-apt-repository universe
 RUN add-apt-repository restricted
 RUN add-apt-repository multiverse
-RUN apt-get -y update
 RUN export DEBIAN_FRONTEND=noninteractive; \
     export DEBCONF_NONINTERACTIVE_SEEN=true; \
     echo 'tzdata tzdata/Areas select Etc' | debconf-set-selections; \
