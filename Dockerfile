@@ -1,5 +1,14 @@
 FROM ubuntu:18.04
 RUN apt-get -y update
+RUN export DEBIAN_FRONTEND=noninteractive; \
+    export DEBCONF_NONINTERACTIVE_SEEN=true; \
+    echo 'tzdata tzdata/Areas select Etc' | debconf-set-selections; \
+    echo 'tzdata tzdata/Zones/Etc select UTC' | debconf-set-selections; \
+    apt-get update -qqy \
+ && apt-get install -qqy --no-install-recommends \
+        tzdata \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 RUN apt-get -y install python-setuptools software-properties-common git
 RUN apt-get -y install nodejs redis-server
 RUN apt-get -y install gettext libproj-dev libgdal-dev build-essential python-pip python-dev
